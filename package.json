@@ -18,8 +18,6 @@
   "files": [
     "lib",
     "src",
-    "binding.gyp",
-    "bindings.js",
     "index.js",
     "js.js"
   ],
@@ -31,9 +29,7 @@
   "scripts": {
     "coverage": "nyc tape test/index.js",
     "coverage-lcov": "npm run coverage && nyc report -r lcov",
-    "install": "npm run rebuild || echo \"Keccak bindings compilation fail. Pure JS implementation will be used.\"",
     "lint": "standard",
-    "rebuild": "node-gyp rebuild",
     "test": "npm run lint && npm run unit",
     "unit": "tape test/index.js"
   },
@@ -53,7 +49,6 @@
   "engines": {
     "node": ">=6.0.0"
   },
-  "gypfile": true,
   "browser": {
     "./index.js": "./js.js"
   }
